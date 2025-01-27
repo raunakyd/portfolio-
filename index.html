@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #4d4d4d, #1a1a1a);
+            color: #f3f3f3;
+            transition: background-color 0.5s;
+        }
+
+        header {
+            background: linear-gradient(to right, #333, #000);
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            animation: slideDown 1s ease-in-out;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        nav a {
+            margin: 0 10px;
+            color: white;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+            color: #64b5f6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            margin: 40px 0;
+            padding: 20px;
+            background: linear-gradient(to bottom, #2c2c2c, #1a1a1a);
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        h2 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+
+        .grid {
+            display: grid;
+            gap: 20px;
+        }
+
+        .grid-2 {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .card {
+            background: linear-gradient(to bottom, #333, #222);
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            transition: transform 0.2s, box-shadow 0.2s;
+            animation: bounceIn 1.5s ease-in-out;
+        }
+
+        .card:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.5);
+        }
+
+        .card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background: linear-gradient(to right, #444, #111);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.5s, transform 0.2s;
+            animation: pulse 2s infinite;
+        }
+
+        .button:hover {
+            background: linear-gradient(to right, #111, #444);
+            color: #f3f3f3;
+            transform: scale(1.1);
+        }
+
+        footer {
+            background: linear-gradient(to right, #333, #000);
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        .contact-links a {
+            margin: 0 10px;
+            color: #64b5f6;
+            text-decoration: none;
+        }
+
+        .contact-links a:hover {
+            text-decoration: underline;
+            color: #64b5f6;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes bounceIn {
+            0% {
+                transform: scale(0.9);
+                opacity: 0;
+            }
+            50% {
+                transform: scale(1.1);
+                opacity: 0.5;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+
+            header .container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav {
+                margin-top: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                font-size: 14px;
+            }
+
+            .card img {
+                height: 100px;
+            }
+
+            .button {
+                padding: 8px 16px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Raunak Yadav</h1>
+            <nav>
+                <a href="#about">About</a>
+                <a href="#certificates">Certificates</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="about">
+            <div class="grid grid-2">
+                <img src="profile.jpg" alt="Profile" style="border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);width: 600px; height: 300px; object-fit: cover;">
+                <div>
+                    <h2>About Me</h2>
+                    <p>I am a passionate Java Full Stack Developer with experience in developing scalable web applications and microservices. Skilled in Java, Spring Boot, Hibernate, JDBC, JSP, and more. I enjoy solving complex problems and crafting user-friendly experiences.</p>
+                    <a href="resume.docx" download class="button">Download Resume</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="certificates">
+            <h2>Certificates</h2>
+            <div class="grid grid-2">
+                <div class="card">
+                    <img src="certificate-1.jpg" alt="Certificate 1">
+                    <div class="card-content">
+                        <h3>Certificate 1</h3>
+                        <p>A brief description of the certificate and the skills it represents.</p>
+                        <a href="#" class="button">View Details</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="certificate-2.jpg" alt="Certificate 2">
+                    <div class="card-content">
+                        <h3>Certificate 2</h3>
+                        <p>A brief description of the certificate and the skills it represents.</p>
+                        <a href="#" class="button">View Details</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="grid grid-2">
+                <div class="card">
+                    <img src="project-1.jpg" alt="Project 1">
+                    <div class="card-content">
+                        <h3>Project 1</h3>
+                        <p>A brief description of the project showcasing skills in Java, Spring Boot MVC, and more.</p>
+                       
+
+                        <a href="#" class="button">View Details</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="project-2.jpg" alt="Project 2">
+                    <div class="card-content">
+                        <h3>Project 2</h3>
+                        <p>A brief description of the project showcasing skills in Java, MongoDB, and more.</p>
+                        <a href="#" class="button">View Details</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>You can reach me through the following platforms:</p>
+            <div class="contact-links">
+                <a href="https://www.linkedin.com/feed/" target="_blank">LinkedIn</a>
+		<a href="https://github.com/settings/profile" target="_blank">GitHub</a>
+                <a href="mailto:raunaky414@gmail.com">Email</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Raunak Yadav. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+
